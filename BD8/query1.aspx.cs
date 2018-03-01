@@ -11,10 +11,7 @@ namespace BD8
 {
     public partial class query1 : System.Web.UI.Page
     {
-        public void Page_Load(object sender, EventArgs e)
-        {
-
-        }
+        public void Page_Load(object sender, EventArgs e){        }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -73,8 +70,10 @@ namespace BD8
                         dt.Rows.Add(n_post, name, reiting, town);
                     }
                 }
-
+                // Ассоциируем GridView с полученной таблицей
                 GridView1.DataSource = dt;
+                // Связывает источник данных с вызывающим серверным элементом управления 
+                // и всеми его дочерними элементами управления
                 GridView1.DataBind();
                 // Подтверждаем транзакцию  
                 tx.Commit();
@@ -87,10 +86,8 @@ namespace BD8
                 // выполняем откат транзакции 
                 tx.Rollback();
             }
-
             //закрываем соединение
             conn.Close();
-
         }
     }
 }

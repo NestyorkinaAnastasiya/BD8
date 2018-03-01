@@ -11,10 +11,7 @@ namespace BD8
 {
     public partial class query2 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
+        protected void Page_Load(object sender, EventArgs e) {        }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -38,7 +35,7 @@ namespace BD8
             par_value.OdbcType = OdbcType.Text;
             par_value.Value = TextBox1.Text;
 
-            // Добавляем второй параметр в коллекцию.
+            // Добавляем первый параметр в коллекцию.
             cmd.Parameters.Add(par_value);
 
             // Создаем второй параметр
@@ -54,6 +51,8 @@ namespace BD8
             OdbcTransaction tx = null;
             try
             {
+                Label1.Text = "";
+                Label2.Text = "";
                 // Начинаем транзакцию и извлекаем объект транзакции из объекта подключения.
                 tx = conn.BeginTransaction();
                 // Включаем объект SQL-команды в транзакцию
@@ -64,9 +63,9 @@ namespace BD8
 
                 // Подтверждаем транзакцию  
                 tx.Commit();
-                Label1.Text = "Число записей изменено: ";
-                Label1.Text += i;
-                GridView1.DataBind();
+                Label2.Text = "Число записей изменено: ";
+                Label2.Text += i;
+                GridView2.DataBind();
             }
             catch (Exception ex)
             {
@@ -79,9 +78,6 @@ namespace BD8
 
             //закрываем соединение
             conn.Close();
-
         }
-
-
     }
 }

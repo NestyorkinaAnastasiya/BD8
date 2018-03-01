@@ -12,6 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+           <b> Запрос №1:</b>
             Получить информацию о поставщиках, поставивших детали для изделий из указанного города.</div>
         <p>
 &nbsp; Выберите город:&nbsp;&nbsp;&nbsp;
@@ -23,18 +24,22 @@
 from pmib4306.j"></asp:SqlDataSource>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </p>
-        <p>
-            Результат запроса:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:GridView ID="GridView1" runat="server">
+        <p style="margin-left: 195px">
+            <b>Результат запроса:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
         <p>
-            &nbsp;<asp:Label ID="Label2" runat="server"></asp:Label>
+            &nbsp;<asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
         </p>
         <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button1" runat="server" PostBackUrl="~/loadpage.aspx" Text="Переход на главную страницу" />
         </p>
+        <p style="margin-left: 0px">
+            Выполнили студенты группы ПМ-43&nbsp;Нестёркина А. А., Щанкина Л. Ю.</p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

@@ -13,20 +13,17 @@ namespace BD8
    
     public partial class loadpage : System.Web.UI.Page
     {
-        // Объект подключения
-        public OdbcConnection conn;
         protected void Page_Load(object sender, EventArgs e)
         {
                                     
         }
 
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
-
         protected void UpdateTable_Click(object sender, EventArgs e)
         {
+            // Объект подключения
+            OdbcConnection conn;
+            Label1.Text = "";
+            Label2.Text = "";
             // Создаем объект подключения
             conn = new OdbcConnection();
             // Задаем параметр подключения – имя ODBC-источника
@@ -34,7 +31,7 @@ namespace BD8
             // Подключаемся к БД
             conn.Open();
             
-            // Запрос на удаление всех элементов из таблиц
+            // Считываем запрос на обновление информации из файла
             string deleteSQL = File.ReadAllText(@"C:\Users\Анастасия\source\repos\BD8\BD8\update.txt",Encoding.GetEncoding(1251));
                 
             OdbcCommand cmd = new OdbcCommand(deleteSQL, conn);
@@ -51,6 +48,8 @@ namespace BD8
                 int i = cmd.ExecuteNonQuery();
                 // Подтверждаем транзакцию  
                 tx.Commit();
+                // Информируем пользователя об успешном выполнении запроса
+                Label2.Text = "Обновление прошло успешно";
             }
             catch (Exception ex)
             {
@@ -66,7 +65,7 @@ namespace BD8
 
         protected void Query1_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
